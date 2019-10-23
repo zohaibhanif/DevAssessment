@@ -1,31 +1,24 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Prism;
+using Prism.Ioc;
 
 namespace DevAssessment
 {
-    public partial class App : Application
+    [AutoRegisterForNavigation]
+    public partial class App 
     {
-        public App()
+        public App() : this(null) { }
+
+        public App(IPlatformInitializer initializer) : base(initializer) { }
+
+        protected async override void OnInitialized()
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            await NavigationService.NavigateAsync("MainPage");
         }
 
-        protected override void OnStart()
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            // Handle when your app starts
-        }
-
-        protected override void OnSleep()
-        {
-            // Handle when your app sleeps
-        }
-
-        protected override void OnResume()
-        {
-            // Handle when your app resumes
         }
     }
 }
