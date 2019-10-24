@@ -1,6 +1,7 @@
 ﻿using AuthModule.Events;
 using AuthModule.Services;
 using MockAuthentication.Models;
+using Prism.AppModel;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Logging;
@@ -9,7 +10,7 @@ using System.Text.RegularExpressions;
 
 namespace AuthModule.ViewModels
 {
-    public class LoginPageViewModel : BindableBase
+    public class LoginPageViewModel : BindableBase, IPageLifecycleAware
     {
         private IAuthenticationService AuthenticationService { get; }
         private IEventAggregator EventAggregator { get; }
@@ -110,6 +111,20 @@ namespace AuthModule.ViewModels
         {
             ErrorMessage = message;
             IsNotValid = string.IsNullOrWhiteSpace(message) ? false : true;
+        }
+
+        public async void OnAppearing()
+        {
+            var accessToken = await AuthenticationService.CheckValidSessionAsync();
+
+            if (!string.IsNullOrWhiteSpace(accessToken))
+            {
+                EventAggregator.GetEvent<UserAuthenticatedEvent>().Publish(accessToken);
+            }
+        }
+
+        public void OnDisappearing()
+        {
         }
     }
 }

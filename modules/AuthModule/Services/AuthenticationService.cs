@@ -39,6 +39,34 @@ namespace AuthModule.Services
             return result;
         }
 
+        public async Task<string> CheckValidSessionAsync()
+        {
+            try
+            {
+                string accessToken = await SecureStorage.GetAsync(AccessTokenKey);
+
+                if (accessToken is null)
+                {
+                    return null;
+                }
+
+                if (UserService.IsTokenValid(accessToken))
+                {
+                    return accessToken;
+                }
+                else
+                {
+                    SecureStorage.Remove(AccessTokenKey);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Report(ex);
+            }
+
+            return null;
+        }
+
         public async Task LogoutAsync()
         {
             try

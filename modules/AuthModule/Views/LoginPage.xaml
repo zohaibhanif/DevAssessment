@@ -14,7 +14,8 @@
              Placeholder="Email" />
       <Entry Text="{Binding Password}" 
              Placeholder="Password" 
-             IsPassword="True" />
+             IsPassword="True" 
+             ReturnType="Send"/>
       <Label Text="{Binding ErrorMessage}" 
              TextColor="Red"
              IsVisible="{Binding IsValid}"/>
