@@ -31,7 +31,7 @@ namespace AuthModule.ViewModels
             set => SetProperty(ref _email, value);
         }
 
-        public string _email;
+        private string _email;
 
         public string Password
         {
@@ -39,7 +39,7 @@ namespace AuthModule.ViewModels
             set => SetProperty(ref _password, value);
         }
 
-        public string _password;
+        private string _password;
 
         public bool IsBusy
         {
@@ -47,7 +47,7 @@ namespace AuthModule.ViewModels
             set => SetProperty(ref _isBusy, value);
         }
 
-        public bool _isBusy;
+        private bool _isBusy;
 
         public bool IsNotValid
         {
@@ -55,7 +55,7 @@ namespace AuthModule.ViewModels
             set => SetProperty(ref _isNotValid, value);
         }
 
-        public bool _isNotValid;
+        private bool _isNotValid;
 
         public string ErrorMessage
         {
@@ -63,7 +63,7 @@ namespace AuthModule.ViewModels
             set => SetProperty(ref _errorMessage, value);
         }
 
-        public string _errorMessage;
+        private string _errorMessage;
 
         public DelegateCommand LoginCommand { get; }
 

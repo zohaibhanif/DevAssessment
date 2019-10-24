@@ -12,6 +12,15 @@
   <MasterDetailPage.Master>
     <ContentPage Title="Menu">
       <StackLayout Padding="20" Margin="0,10,0,0">
+        <StackLayout Orientation="Horizontal">
+          <Label Text="Name: " />
+          <Label Text="{Binding JwtUser.Name}" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+          <Label Text="Role: " />
+          <Label Text="{Binding JwtUser.Role}" />
+        </StackLayout>
+        
         <ListView ItemsSource="{Binding MenuItems}" SelectionMode="None">
           <ListView.Behaviors>
             <prism:EventToCommandBehavior 

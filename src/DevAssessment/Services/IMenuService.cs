@@ -5,6 +5,8 @@ namespace DevAssessment.Services
 {
     public interface IMenuService
     {
-        IEnumerable<Item> MenuItems { get; set; }
+        IEnumerable<Item> MenuItems { get; }
+        void Load();
+        void Clear();
     }
 }
