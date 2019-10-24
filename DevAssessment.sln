@@ -32,9 +32,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "steps", "steps", "{C2C4F1B3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modules", "modules", "{9697ED0B-6670-4D9C-98A3-6C6214D8F3A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthModule", "modules\AuthModule\AuthModule.csproj", "{3C2CC318-F33E-43EA-A58D-928ED9502F79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthModule", "modules\AuthModule\AuthModule.csproj", "{3C2CC318-F33E-43EA-A58D-928ED9502F79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockAuthentication", "libs\MockAuthentication\MockAuthentication.csproj", "{6EF9E22F-B6A0-47FE-B094-4AEBF11F25BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockAuthentication", "libs\MockAuthentication\MockAuthentication.csproj", "{6EF9E22F-B6A0-47FE-B094-4AEBF11F25BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{94AC8E36-9312-44C8-BC0E-8E1B5BA727B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -256,6 +258,7 @@ Global
 		{4059FDC1-8664-4590-A7A9-A325899A410F} = {87E52D4C-5527-4D19-85AB-E43F40DAC089}
 		{C2C4F1B3-AF32-46F7-BF4E-D6CA57D830DC} = {87E52D4C-5527-4D19-85AB-E43F40DAC089}
 		{3C2CC318-F33E-43EA-A58D-928ED9502F79} = {9697ED0B-6670-4D9C-98A3-6C6214D8F3A3}
+		{6EF9E22F-B6A0-47FE-B094-4AEBF11F25BB} = {94AC8E36-9312-44C8-BC0E-8E1B5BA727B3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B23AE23D-2FD2-4FC7-B5FF-E90F66B13899}

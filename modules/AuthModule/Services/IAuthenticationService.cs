@@ -6,6 +6,7 @@ namespace AuthModule.Services
     public interface IAuthenticationService
     {
         Task<AuthenticationResult> LoginAsync(string username, string password);
+        Task<string> CheckValidSessionAsync();
         Task LogoutAsync();
     }
 }

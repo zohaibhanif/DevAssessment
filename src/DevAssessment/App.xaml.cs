@@ -20,7 +20,7 @@ namespace DevAssessment
         {
             InitializeComponent();
 
-            var eventAggregator = Container.Resolve<IEventAggregator>();
+            IEventAggregator eventAggregator = Container.Resolve<IEventAggregator>();
             eventAggregator.GetEvent<UserAuthenticatedEvent>().Subscribe(NavigateAuthenticatedUser);
             eventAggregator.GetEvent<LoggedOutEvent>().Subscribe(NavigateLoggedOutUser);
 

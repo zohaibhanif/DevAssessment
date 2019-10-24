@@ -6,5 +6,6 @@ namespace MockAuthentication.Services
     public interface IJwtService
     {
         string GenerateToken(List<Claim> claims);
+        bool IsTokenValid(string token);
     }
 }

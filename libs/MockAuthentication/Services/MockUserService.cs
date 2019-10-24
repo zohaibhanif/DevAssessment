@@ -54,5 +54,17 @@ namespace MockAuthentication.Services
 
             return result;
         }
+
+        public bool IsTokenValid(string token)
+        {
+            try
+            {
+                return JwtService.IsTokenValid(token);
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

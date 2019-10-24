@@ -14,7 +14,7 @@ namespace MockAuthentication.Services
 
         public JwtService()
         {
-            ExpireMinutes = 720;
+            ExpireMinutes = 300;
             SecretKey = "TW9zaGVFcmV6UHJpdmF0ZUtleQ==";
             SecurityAlgorithm = SecurityAlgorithms.HmacSha256Signature;
         }
@@ -40,10 +40,41 @@ namespace MockAuthentication.Services
             return token;
         }
 
+        public bool IsTokenValid(string token)
+        {
+            if (string.IsNullOrEmpty(token))
+            {
+                throw new ArgumentException("Given token is null or empty.");
+            }
+
+            TokenValidationParameters tokenValidationParameters = GetTokenValidationParameters();
+            JwtSecurityTokenHandler jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
+
+            try
+            {
+                ClaimsPrincipal tokenValid = jwtSecurityTokenHandler.ValidateToken(token, tokenValidationParameters, out SecurityToken validatedToken);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         private SecurityKey GetSymmetricSecurityKey()
         {
             byte[] symmetricKey = Convert.FromBase64String(SecretKey);
             return new SymmetricSecurityKey(symmetricKey);
+        }
+
+        private TokenValidationParameters GetTokenValidationParameters()
+        {
+            return new TokenValidationParameters()
+            {
+                ValidateIssuer = false,
+                ValidateAudience = false,
+                IssuerSigningKey = GetSymmetricSecurityKey()
+            };
         }
     }
 }
