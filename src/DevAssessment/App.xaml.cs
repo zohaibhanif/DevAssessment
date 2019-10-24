@@ -7,6 +7,9 @@ using Prism.Modularity;
 using Prism.Logging;
 using Xamarin.Forms;
 using DevAssessment.Services;
+using System;
+using Prism.Navigation;
+using System.Linq;
 
 namespace DevAssessment
 {
@@ -38,15 +41,27 @@ namespace DevAssessment
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
             moduleCatalog.AddModule<AuthenticationModule>();
+            Type adminModuleInfo = typeof(AdminModule.AdminModule);
+            moduleCatalog.AddModule(new ModuleInfo(adminModuleInfo) { 
+                ModuleName = adminModuleInfo.Name,
+                InitializationMode = InitializationMode.OnDemand
+            });
         }
 
         private async void NavigateAuthenticatedUser(string accessToken)
         {
-            await NavigationService.NavigateAsync("/MainPage/NavigationPage/DashboardPage");
+            await NavigationService.NavigateAsync("/MainPage/NavigationPage/DashboardPage", ("accessToken", accessToken));
         }
 
         private async void NavigateLoggedOutUser()
         {
+            var modules = Container.Resolve<IModuleCatalog>().Modules.ToList();
+            var adminModule = modules.FirstOrDefault(x => x.ModuleName == nameof(AdminModule.AdminModule));
+
+            if (!(adminModule is null))
+            {
+                adminModule.State = ModuleState.NotStarted;
+            };
             await NavigationService.NavigateAsync("/login");
         }
     }

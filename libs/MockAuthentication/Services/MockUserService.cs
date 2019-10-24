@@ -19,7 +19,7 @@ namespace MockAuthentication.Services
             UserList = new List<User>()
             {
                 new User(){ Name = "Zohaib", Email = "zohaib.hanif@nxb.com.pk", Password = "test123", Role = AppRole.Admin },
-                new User(){ Name = "Ali", Email = "zohaib@avantipoint.com", Password = "test", Role = AppRole.User },
+                new User(){ Name = "Ali", Email = "zohaib@avantipoint.com", Password = "test", Role = AppRole.Admin },
                 new User(){ Name = "Awais", Email = "zohaib.avantipoint@nxvt.com", Password = "test123", Role = AppRole.User }
             };
         }

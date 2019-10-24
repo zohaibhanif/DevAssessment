@@ -11,29 +11,37 @@ using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using Xamarin.Essentials;
 using Prism.AppModel;
+using Prism.Modularity;
 
 namespace DevAssessment.ViewModels
 {
-    public class MainPageViewModel : BindableBase, IPageLifecycleAware
+    public class MainPageViewModel : BindableBase, IInitialize, IPageLifecycleAware
     {
         private IEventAggregator EventAggregator { get; }
         private IMenuService MenuService { get; }
         private INavigationService NavigationService { get; }
+        private IModuleManager ModuleManager { get; }
         private ILogger Logger { get; }
 
-        public MainPageViewModel(INavigationService navigationService, ILogger logger, IMenuService menuService, IEventAggregator eventAggregator)
+        public MainPageViewModel(INavigationService navigationService, ILogger logger, IMenuService menuService, IEventAggregator eventAggregator, IModuleManager moduleManager)
         {
             EventAggregator = eventAggregator;
             NavigationService = navigationService;
             MenuService = menuService;
             Logger = logger;
-            MenuItems = new ObservableCollection<Item>(MenuService.MenuItems);
+            ModuleManager = moduleManager;
 
             LogoutCommand = new DelegateCommand(OnLogoutCommandExecuted);
             NavigationCommand = new DelegateCommand<Item>(OnNavigationCommandExecuted);
         }
 
-        public IEnumerable<Item> MenuItems { get; }
+        public IEnumerable<Item> MenuItems
+        {
+            get => _menuItems;
+            set => SetProperty(ref _menuItems, value);
+        }
+
+        private IEnumerable<Item> _menuItems;
 
         public bool IsPresented
         {
@@ -41,7 +49,15 @@ namespace DevAssessment.ViewModels
             set => SetProperty(ref _isPresented, value);
         }
 
-        public bool _isPresented;
+        private bool _isPresented;
+
+        public JwtUser JwtUser
+        {
+            get => _jwtUser;
+            set => SetProperty(ref _jwtUser, value);
+        }
+
+        private JwtUser _jwtUser;
 
         public DelegateCommand LogoutCommand { get; }
 
@@ -70,10 +86,28 @@ namespace DevAssessment.ViewModels
             {
                 IsPresented = true;
             }
+
+            if (JwtUser.Role.Equals(Role.Admin))
+            {
+                ModuleManager.LoadModule(nameof(AdminModule.AdminModule));
+            }
+
+            MenuService.Clear();
+            MenuService.Load();
+            MenuItems = new ObservableCollection<Item>(MenuService.MenuItems);
         }
 
         public void OnDisappearing()
         {
+        }
+
+        public void Initialize(INavigationParameters parameters)
+        {
+            if (JwtUser is null)
+            {
+                var accessToken = parameters.GetValue<string>("accessToken");
+                JwtUser = new JwtUser(accessToken);
+            }
         }
     }
 }

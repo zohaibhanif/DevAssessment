@@ -13,6 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\libs\MenuHelper\MenuHelper.csproj" />
+    <ProjectReference Include="..\..\modules\AdminModule\AdminModule.csproj" />
     <ProjectReference Include="..\..\modules\AuthModule\AuthModule.csproj" />
   </ItemGroup>
 </Project>

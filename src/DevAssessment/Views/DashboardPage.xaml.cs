@@ -1,5 +1,5 @@
-﻿using DevAssessment.Helpers;
-using DevAssessment.Views;
+﻿using DevAssessment.Views;
+using MenuHelper;
 using Xamarin.Forms;
 
 [assembly: MenuItem("Dashboard", nameof(DashboardPage), 1)]
