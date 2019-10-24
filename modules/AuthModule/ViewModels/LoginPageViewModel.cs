@@ -68,7 +68,6 @@ namespace AuthModule.ViewModels
 
         private async void ExecuteLoginCommand()
         {
-
             SetErrorMessage(string.Empty);
 
             if (string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(Password))

@@ -32,9 +32,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "steps", "steps", "{C2C4F1B3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modules", "modules", "{9697ED0B-6670-4D9C-98A3-6C6214D8F3A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthModule", "AuthModule\AuthModule.csproj", "{3C2CC318-F33E-43EA-A58D-928ED9502F79}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthModule", "modules\AuthModule\AuthModule.csproj", "{3C2CC318-F33E-43EA-A58D-928ED9502F79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockAuthentication", "MockAuthentication\MockAuthentication.csproj", "{6EF9E22F-B6A0-47FE-B094-4AEBF11F25BB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockAuthentication", "libs\MockAuthentication\MockAuthentication.csproj", "{6EF9E22F-B6A0-47FE-B094-4AEBF11F25BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
