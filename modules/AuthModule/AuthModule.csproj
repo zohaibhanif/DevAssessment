@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MockAuthentication\MockAuthentication.csproj" />
+    <ProjectReference Include="..\..\libs\MockAuthentication\MockAuthentication.csproj" />
   </ItemGroup>
 
   <ItemGroup>
