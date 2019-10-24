@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             x:Class="AuthModule.Views.LoginPage">
+  <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+    <StackLayout  HorizontalOptions="FillAndExpand" 
+                  VerticalOptions="CenterAndExpand" 
+                  Margin="5">
+      <Label Text="Login"
+             Style="{StaticResource Heading}"
+             HorizontalOptions="Center"/>
+      <Entry Text="{Binding Email}" 
+             Placeholder="Email" />
+      <Entry Text="{Binding Password}" 
+             Placeholder="Password" 
+             IsPassword="True" />
+      <Label Text="{Binding ErrorMessage}" 
+             TextColor="Red"
+             IsVisible="{Binding IsValid}"/>
+      <Button Text="Login" 
+              Command="{Binding LoginCommand}" />
+    </StackLayout>
+    <BoxView BackgroundColor="Black"
+             Opacity="0.6"
+             VerticalOptions="FillAndExpand"
+             HorizontalOptions="FillAndExpand"
+             IsVisible="{Binding IsBusy}" />
+    <StackLayout IsVisible="{Binding IsBusy}"
+                 Padding="12"
+                 BackgroundColor="Transparent"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="CenterAndExpand">
+      <ActivityIndicator IsRunning="{Binding IsBusy}" 
+                         Color ="White"/>
+      <Label Text="Loading"
+             HorizontalOptions="Center"
+             TextColor="White"
+             FontSize="Large"
+             Margin="20,10"/>
+    </StackLayout>
+  </Grid>
+</ContentPage>
