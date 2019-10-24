@@ -1,5 +1,4 @@
-﻿using System;
-using AuthModule.Events;
+﻿using AuthModule.Events;
 using AuthModule.Services;
 using AuthModule.ViewModels;
 using AuthModule.Views;

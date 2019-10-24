@@ -6,11 +6,12 @@ using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Logging;
 using Xamarin.Forms;
+using DevAssessment.Services;
 
 namespace DevAssessment
 {
     [AutoRegisterForNavigation]
-    public partial class App 
+    public partial class App
     {
         public App() : this(null) { }
 
@@ -31,6 +32,7 @@ namespace DevAssessment
         {
             containerRegistry.Register<ILogger, ConsoleLoggingService>();
             containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterSingleton<IMenuService, MenuService>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
@@ -40,7 +42,7 @@ namespace DevAssessment
 
         private async void NavigateAuthenticatedUser(string accessToken)
         {
-            await NavigationService.NavigateAsync("/NavigationPage/MainPage");
+            await NavigationService.NavigateAsync("/MainPage/NavigationPage/DashboardPage");
         }
 
         private async void NavigateLoggedOutUser()
