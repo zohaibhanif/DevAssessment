@@ -1,5 +1,11 @@
-﻿using Prism;
+﻿using AuthModule;
+using AuthModule.Events;
+using Prism;
+using Prism.Events;
 using Prism.Ioc;
+using Prism.Modularity;
+using Prism.Logging;
+using Xamarin.Forms;
 
 namespace DevAssessment
 {
@@ -14,11 +20,32 @@ namespace DevAssessment
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("MainPage");
+            var eventAggregator = Container.Resolve<IEventAggregator>();
+            eventAggregator.GetEvent<UserAuthenticatedEvent>().Subscribe(NavigateAuthenticatedUser);
+            eventAggregator.GetEvent<LoggedOutEvent>().Subscribe(NavigateLoggedOutUser);
+
+            await NavigationService.NavigateAsync("login");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.Register<ILogger, ConsoleLoggingService>();
+            containerRegistry.RegisterForNavigation<NavigationPage>();
+        }
+
+        protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
+        {
+            moduleCatalog.AddModule<AuthenticationModule>();
+        }
+
+        private async void NavigateAuthenticatedUser(string accessToken)
+        {
+            await NavigationService.NavigateAsync("/NavigationPage/MainPage");
+        }
+
+        private async void NavigateLoggedOutUser()
+        {
+            await NavigationService.NavigateAsync("/login");
         }
     }
 }
