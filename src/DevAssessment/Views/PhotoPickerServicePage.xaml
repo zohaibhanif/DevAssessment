@@ -4,7 +4,8 @@
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="DevAssessment.Views.PhotoPickerServicePage"
-             Title="Photo Picker">
+             Title="Photo Picker"
+             Visual="Material">
   <StackLayout Margin="20,35,20,20">
     <Label Text="Photo Picker"
                    FontAttributes="Bold"
