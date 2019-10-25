@@ -4,7 +4,8 @@
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="DevAssessment.Views.TextToSpeechServicePage"
-             Title="Text to Speech">
+             Title="Text to Speech"
+             Visual="Material">
   <StackLayout Margin="20,35,20,20">
     <Label Text="Text to Speech"
                    FontAttributes="Bold"

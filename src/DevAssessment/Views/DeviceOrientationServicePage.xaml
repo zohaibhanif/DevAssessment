@@ -4,7 +4,8 @@
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="DevAssessment.Views.DeviceOrientationServicePage"
-             Title="Device Orientation">
+             Title="Device Orientation"
+             Visual="Material">
   <StackLayout Margin="20,35,20,20">
     <Label Text="Device Orientation"
                    FontAttributes="Bold"

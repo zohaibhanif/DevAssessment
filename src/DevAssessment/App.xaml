@@ -7,10 +7,40 @@
              mc:Ignorable="d"
              x:Class="DevAssessment.App">
   <prism:PrismApplication.Resources>
-    <Style x:Key="Heading" TargetType="Label">
-      <Setter Property="FontAttributes" Value="Bold" />
-      <Setter Property="FontSize" Value="Large" />
-      <Setter Property="Margin" Value="0,0,0,10" />
+    <Color x:Key="AppBackgroundColor">White</Color>
+    <Color x:Key="NavBarColor">#00bcd4</Color>
+    <Color x:Key="NavBarTextColor">White</Color>
+    <Color x:Key="ProfileImageContainerColor">#00bcd4</Color>
+    <Color x:Key="MenuHeadingColor">White</Color>
+    <Color x:Key="ButtonColor">#00bcd4</Color>
+
+    <Style TargetType="{x:Type NavigationPage }">
+      <Setter Property="BarBackgroundColor" 
+              Value="{StaticResource NavBarColor}"></Setter>
+      <Setter Property="BarTextColor" 
+              Value="{StaticResource NavBarTextColor}"></Setter>
+    </Style>
+    <Style TargetType="ContentPage" 
+           ApplyToDerivedTypes="True">
+      <Setter Property="BackgroundColor" 
+              Value="{StaticResource AppBackgroundColor}" />
+    </Style>
+    <Style x:Key="Heading" 
+           TargetType="Label">
+      <Setter Property="FontAttributes" 
+              Value="Bold" />
+      <Setter Property="FontSize" 
+              Value="Large" />
+      <Setter Property="Margin" 
+              Value="0,0,0,10" />
+    </Style>
+    <Style TargetType="Button"
+           ApplyToDerivedTypes="True"
+           CanCascade="True">
+      <Setter Property="TextColor" 
+              Value="White" />
+      <Setter Property="BackgroundColor" 
+              Value="{StaticResource ButtonColor}" />
     </Style>
   </prism:PrismApplication.Resources>
 </prism:PrismApplication>
