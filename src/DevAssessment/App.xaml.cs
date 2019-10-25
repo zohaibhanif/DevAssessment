@@ -10,6 +10,7 @@ using DevAssessment.Services;
 using System;
 using Prism.Navigation;
 using System.Linq;
+using DryIoc;
 
 namespace DevAssessment
 {
@@ -19,6 +20,11 @@ namespace DevAssessment
         public App() : this(null) { }
 
         public App(IPlatformInitializer initializer) : base(initializer) { }
+
+        protected override Rules CreateContainerRules()
+        {
+            return base.CreateContainerRules().WithoutThrowOnRegisteringDisposableTransient();
+        }
 
         protected async override void OnInitialized()
         {
