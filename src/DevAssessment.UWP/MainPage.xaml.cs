@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DevAssessment.Services;
+using Prism;
+using Prism.Ioc;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -15,13 +18,20 @@ using Windows.UI.Xaml.Navigation;
 
 namespace DevAssessment.UWP
 {
-    public sealed partial class MainPage
+    public sealed partial class MainPage : IPlatformInitializer
     {
         public MainPage()
         {
             this.InitializeComponent();
 
-            LoadApplication(new DevAssessment.App());
+            LoadApplication(new DevAssessment.App(this));
+        }
+
+        public void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+            containerRegistry.Register<IDeviceOrientationService, DeviceOrientationService>();
+            containerRegistry.Register<IPhotoPickerService, PhotoPickerService>();
+            containerRegistry.Register<ITextToSpeechService, TextToSpeechService>();
         }
     }
 }

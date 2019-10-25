@@ -62,6 +62,9 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Services\DeviceOrientationService.cs" />
+    <Compile Include="Services\PhotoPickerService.cs" />
+    <Compile Include="Services\TextToSpeechService.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
