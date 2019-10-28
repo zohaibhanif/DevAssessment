@@ -120,6 +120,9 @@
   <data name="AboutPageTitle" xml:space="preserve">
     <value>About</value>
   </data>
+  <data name="AlertDisplayTitle" xml:space="preserve">
+    <value>Alert</value>
+  </data>
   <data name="ApplicationTitle" xml:space="preserve">
     <value>Dev Assessment</value>
   </data>
@@ -137,6 +140,9 @@
   </data>
   <data name="DeviceOrientationPageTitle" xml:space="preserve">
     <value>Device Orientation</value>
+  </data>
+  <data name="ErrorDisplayTitle" xml:space="preserve">
+    <value>Error</value>
   </data>
   <data name="LabelDeviceOrientation" xml:space="preserve">
     <value>Device Orientation</value>

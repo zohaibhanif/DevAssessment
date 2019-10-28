@@ -7,7 +7,14 @@
              x:Class="DevAssessment.Views.DashboardPage"
              Title="{x:Static resource:AppResources.DashboardPageTitle}"
 			       Visual="Material">
-  <Label Style="{StaticResource Heading}"
-         HorizontalOptions="Center"
+
+  <StackLayout Margin="20,35,20,20">
+    <Label Style="{StaticResource Heading}"
+           HorizontalOptions="Center"
          Text="{x:Static resource:AppResources.ApplicationTitle}"/>
+    <Button Text="{x:Static resource:AppResources.AlertDisplayTitle}"
+            Command="{Binding DisplayAlertCommand}" />
+    <Button Text="{x:Static resource:AppResources.ErrorDisplayTitle}"
+            Command="{Binding DisplayErrorCommand}" />
+  </StackLayout>
 </ContentPage>

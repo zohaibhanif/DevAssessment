@@ -13,6 +13,9 @@ using Prism.Navigation;
 using System;
 using System.Linq;
 using Xamarin.Forms;
+using Prism.Services.Dialogs;
+using DevAssessment.Views;
+using DevAssessment.ViewModels;
 
 namespace DevAssessment
 {
@@ -46,8 +49,11 @@ namespace DevAssessment
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.Register<ILogger, ConsoleLoggingService>();
+            containerRegistry.Register<IDialogService, DialogService>();
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterSingleton<IMenuService, MenuService>();
+            containerRegistry.RegisterDialog<AlertDialogView, AlertDialogViewModel>();
+            containerRegistry.RegisterDialog<ErrorDialogView, ErrorDialogViewModel>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
