@@ -2,17 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
+             xmlns:resource="clr-namespace:DevAssessment.Resources"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="DevAssessment.Views.DeviceOrientationServicePage"
-             Title="Device Orientation"
-             Visual="Material">
+             Title="{x:Static resource:AppResources.DeviceOrientationPageTitle}"
+			       Visual="Material">
   <StackLayout Margin="20,35,20,20">
-    <Label Text="Device Orientation"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center" />
-    <Button Text="Get Device Orientation"
-                    Command="{Binding OrientationCommand}" />
+    <Label Text="{x:Static resource:AppResources.LabelDeviceOrientation}"
+           FontAttributes="Bold"
+           HorizontalOptions="Center" />
+    <Button Text="{x:Static resource:AppResources.ButtonGetDeviceOrientation}"
+            Command="{Binding OrientationCommand}" />
     <Label Text="{Binding Orientation}"
-                   HorizontalOptions="Center" />
+           HorizontalOptions="Center" />
   </StackLayout>
 </ContentPage>

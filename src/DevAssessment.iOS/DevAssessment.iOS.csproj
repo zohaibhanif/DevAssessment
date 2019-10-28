@@ -60,6 +60,7 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Localization\Locale.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Services\DeviceOrientationService.cs" />
@@ -131,6 +132,10 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
+    <ProjectReference Include="..\..\libs\Common\Common.csproj">
+      <Project>{7F0C709F-9CA4-448E-97AA-103E66561D1C}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DevAssessment\DevAssessment.csproj">
       <Project>{EFE165AE-2CAC-4F5B-8BFC-C76CA6AE2532}</Project>
       <Name>DevAssessment</Name>

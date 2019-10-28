@@ -10,7 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\libs\MenuHelper\MenuHelper.csproj" />
+    <ProjectReference Include="..\..\libs\Common\Common.csproj" />
   </ItemGroup>
-
 </Project>

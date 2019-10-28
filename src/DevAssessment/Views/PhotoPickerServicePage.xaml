@@ -2,15 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
+             xmlns:resource="clr-namespace:DevAssessment.Resources"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="DevAssessment.Views.PhotoPickerServicePage"
-             Title="Photo Picker"
-             Visual="Material">
+             Title="{x:Static resource:AppResources.PhotoPickerPageTitle}"
+			       Visual="Material">
   <StackLayout Margin="20,35,20,20">
-    <Label Text="Photo Picker"
+    <Label Text="{x:Static resource:AppResources.LabelPhotoPicker}"
                    FontAttributes="Bold"
                    HorizontalOptions="Center" />
-    <Button Text="Pick Photo"
+    <Button Text="{x:Static resource:AppResources.ButtonPickPhoto}"
                     Command="{Binding PickPhotoCommand}" />
     <Image Source="{Binding ImageSource}" />
   </StackLayout>

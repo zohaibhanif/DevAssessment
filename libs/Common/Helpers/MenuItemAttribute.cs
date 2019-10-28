@@ -1,13 +1,13 @@
 ﻿using System;
 
-namespace MenuHelper
+namespace Common.Helpers
 {
     [AttributeUsage(AttributeTargets.Assembly, AllowMultiple = true)]
     public sealed class MenuItemAttribute : Attribute
     {
-        public MenuItemAttribute(string displayName, string navigationName, int order)
+        public MenuItemAttribute(string key, Type resourceType, string navigationName, int order)
         {
-            DisplayName = displayName;
+            DisplayName = ResourceHelper.GetResourceLookup<string>(resourceType, key);
             NavigationName = navigationName;
             Order = order;
         }

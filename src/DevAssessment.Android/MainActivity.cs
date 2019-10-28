@@ -13,6 +13,8 @@ using System.IO;
 using Android.Content;
 using DevAssessment.Services;
 using DryIoc;
+using DevAssessment.Droid.Localization;
+using Common.Localization;
 
 namespace DevAssessment.Droid
 {
@@ -72,6 +74,7 @@ namespace DevAssessment.Droid
             containerRegistry.Register<IDeviceOrientationService, DeviceOrientationService>();
             containerRegistry.Register<IPhotoPickerService, PhotoPickerService>();
             containerRegistry.Register<ITextToSpeechService, TextToSpeechService>();
+            containerRegistry.Register<ILocale, Locale>();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AuthModule.Events;
+using AuthModule.Resources;
 using AuthModule.Services;
 using MockAuthentication.Models;
 using Prism.AppModel;
@@ -73,13 +74,13 @@ namespace AuthModule.ViewModels
 
             if (string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(Password))
             {
-                SetErrorMessage("Either Email or Password is not provided");
+                SetErrorMessage(AppResources.ErrorCredentialsNotProvided);
                 return;
             }
 
             if (!IsValidEmail(Email))
             {
-                SetErrorMessage("Email is not valid");
+                SetErrorMessage(AppResources.ErrorInvalidEmail);
                 return;
             }
 

@@ -1,16 +1,18 @@
 ﻿using AuthModule;
 using AuthModule.Events;
+using Common.Localization;
+using DevAssessment.Resources;
+using DevAssessment.Services;
+using DryIoc;
 using Prism;
 using Prism.Events;
 using Prism.Ioc;
-using Prism.Modularity;
 using Prism.Logging;
-using Xamarin.Forms;
-using DevAssessment.Services;
-using System;
+using Prism.Modularity;
 using Prism.Navigation;
+using System;
 using System.Linq;
-using DryIoc;
+using Xamarin.Forms;
 
 namespace DevAssessment
 {
@@ -29,10 +31,14 @@ namespace DevAssessment
         protected async override void OnInitialized()
         {
             InitializeComponent();
-
             IEventAggregator eventAggregator = Container.Resolve<IEventAggregator>();
             eventAggregator.GetEvent<UserAuthenticatedEvent>().Subscribe(NavigateAuthenticatedUser);
             eventAggregator.GetEvent<LoggedOutEvent>().Subscribe(NavigateLoggedOutUser);
+
+            var locale = Container.Resolve<ILocale>();
+            var cultureInfo = locale.GetCurrentCultureInfo();
+            AppResources.Culture = cultureInfo;
+            locale.SetLocale(cultureInfo);
 
             await NavigationService.NavigateAsync("login");
         }
@@ -48,7 +54,8 @@ namespace DevAssessment
         {
             moduleCatalog.AddModule<AuthenticationModule>();
             Type adminModuleInfo = typeof(AdminModule.AdminModule);
-            moduleCatalog.AddModule(new ModuleInfo(adminModuleInfo) { 
+            moduleCatalog.AddModule(new ModuleInfo(adminModuleInfo)
+            {
                 ModuleName = adminModuleInfo.Name,
                 InitializationMode = InitializationMode.OnDemand
             });

@@ -4,8 +4,9 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
 using DevAssessment.Models;
-using MenuHelper;
 using Prism.Modularity;
+using DevAssessment.Resources;
+using Common.Helpers;
 
 namespace DevAssessment.Services
 {
@@ -47,7 +48,7 @@ namespace DevAssessment.Services
                     Uri = x.NavigationName
                 }).ToList();
 
-            menuItems.Add(new Item() { Name = "Logout" });
+            menuItems.Add(new Item() { Name = AppResources.LabelLogout, Uri = string.Empty });
             MenuItems = new ObservableCollection<Item>(menuItems);
         }
 

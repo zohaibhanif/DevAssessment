@@ -61,6 +61,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Localization\Locale.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -96,6 +97,10 @@
     <AndroidResource Include="Resources\drawable\splash_screen.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\libs\Common\Common.csproj">
+      <Project>{7F0C709F-9CA4-448E-97AA-103E66561D1C}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DevAssessment\DevAssessment.csproj">
       <Project>{EFE165AE-2CAC-4F5B-8BFC-C76CA6AE2532}</Project>
       <Name>DevAssessment</Name>

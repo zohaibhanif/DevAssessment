@@ -1,7 +1,9 @@
 ﻿using AuthModule.Events;
+using AuthModule.Resources;
 using AuthModule.Services;
 using AuthModule.ViewModels;
 using AuthModule.Views;
+using Common.Localization;
 using MockAuthentication.Services;
 using Prism.Events;
 using Prism.Ioc;
@@ -24,6 +26,9 @@ namespace AuthModule
             EventAggregator = containerProvider.Resolve<IEventAggregator>();
 
             EventAggregator.GetEvent<LogoutRequestEvent>().Subscribe(ExecuteLogoutRequest);
+
+            var cultureInfo = containerProvider.Resolve<ILocale>().GetCurrentCultureInfo();
+            AppResources.Culture = cultureInfo;
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)

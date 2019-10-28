@@ -1,4 +1,5 @@
-﻿using DevAssessment.Services;
+﻿using DevAssessment.Resources;
+using DevAssessment.Services;
 using Prism.Commands;
 using Prism.Mvvm;
 
@@ -28,7 +29,19 @@ namespace DevAssessment.ViewModels
         private void OnOrientationCommandExecuted()
         {
             DeviceOrientation orientation = DeviceOrientationService.GetOrientation();
-            Orientation = orientation.ToString();
+
+            switch (orientation)
+            {
+                case DeviceOrientation.Landscape:
+                    Orientation = AppResources.LabelLandscape;
+                    break;
+                case DeviceOrientation.Portrait:
+                    Orientation = AppResources.LabelPortait;
+                    break;
+                case DeviceOrientation.Undefined:
+                    Orientation = AppResources.LabelUndefined;
+                    break;
+            }
         }
     }
 }
