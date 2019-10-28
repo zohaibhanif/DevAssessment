@@ -2,9 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
+             xmlns:resource="clr-namespace:AdminModule.Resources"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="AdminModule.Views.AdminPage"
-             Title="Admin Page"
+             Title="{x:Static resource:AppResources.AdminPageTitle}"
              Visual="Material">
   
 </ContentPage>

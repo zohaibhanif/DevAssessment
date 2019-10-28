@@ -92,6 +92,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Localization\Locale.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -152,6 +153,10 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\libs\Common\Common.csproj">
+      <Project>{7F0C709F-9CA4-448E-97AA-103E66561D1C}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DevAssessment\DevAssessment.csproj">
       <Project>{EFE165AE-2CAC-4F5B-8BFC-C76CA6AE2532}</Project>
       <Name>DevAssessment</Name>

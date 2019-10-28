@@ -12,6 +12,7 @@ using Xamarin.Forms;
 using Xamarin.Essentials;
 using Prism.AppModel;
 using Prism.Modularity;
+using DevAssessment.Resources;
 
 namespace DevAssessment.ViewModels
 {
@@ -70,7 +71,7 @@ namespace DevAssessment.ViewModels
 
         private async void OnNavigationCommandExecuted(Item item)
         {
-            if (item.Name.Equals("Logout"))
+            if (item.Name.Equals(AppResources.LabelLogout))
             {
                 LogoutCommand.Execute();
             }

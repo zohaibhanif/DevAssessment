@@ -2,9 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
+             xmlns:resource="clr-namespace:AuthModule.Resources"
              x:Class="AuthModule.Views.LoginPage"
              Visual="Material">
-  <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+  <Grid HorizontalOptions="FillAndExpand" 
+        VerticalOptions="FillAndExpand">
     <StackLayout  HorizontalOptions="FillAndExpand" 
                   VerticalOptions="CenterAndExpand" 
                   Margin="5">
@@ -12,15 +14,15 @@
              Style="{StaticResource Heading}"
              HorizontalOptions="Center"/>
       <Entry Text="{Binding Email}" 
-             Placeholder="Email" />
+             Placeholder="{x:Static resource:AppResources.LabelEmail}" />
       <Entry Text="{Binding Password}" 
-             Placeholder="Password" 
+             Placeholder="{x:Static resource:AppResources.LabelPassword}" 
              IsPassword="True" 
              ReturnType="Send"/>
       <Label Text="{Binding ErrorMessage}" 
              TextColor="Red"
              IsVisible="{Binding IsValid}"/>
-      <Button Text="Login" 
+      <Button Text="{x:Static resource:AppResources.ButtonLogin}" 
               Command="{Binding LoginCommand}" />
     </StackLayout>
     <BoxView BackgroundColor="Black"
@@ -35,7 +37,7 @@
                  HorizontalOptions="CenterAndExpand">
       <ActivityIndicator IsRunning="{Binding IsBusy}" 
                          Color ="White"/>
-      <Label Text="Loading"
+      <Label Text="{x:Static resource:AppResources.LoadingText}"
              HorizontalOptions="Center"
              TextColor="White"
              FontSize="Large"

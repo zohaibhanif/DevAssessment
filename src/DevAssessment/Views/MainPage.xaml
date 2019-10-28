@@ -5,13 +5,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:prism="http://prismlibrary.com"
+             xmlns:resource="clr-namespace:DevAssessment.Resources"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="DevAssessment.Views.MainPage"
-             Title="Main Page"
+             Title="{x:Static resource:AppResources.MainPageTitle}"
              IsPresented="{Binding IsPresented, Mode=TwoWay}"
              Visual="Material">
   <MasterDetailPage.Master>
-    <ContentPage Title="Menu">
+    <ContentPage Title="{x:Static resource:AppResources.MenuTitle}">
       <StackLayout Padding="0" Margin="0">
         <StackLayout Padding="0"  
                      BackgroundColor="{StaticResource ProfileImageContainerColor}"

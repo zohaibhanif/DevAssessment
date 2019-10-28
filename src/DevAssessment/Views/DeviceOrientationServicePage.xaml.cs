@@ -1,8 +1,9 @@
-﻿using DevAssessment.Views;
-using MenuHelper;
+﻿using Common.Helpers;
+using DevAssessment.Resources;
+using DevAssessment.Views;
 using Xamarin.Forms;
 
-[assembly: MenuItem("Device Orientation", nameof(DeviceOrientationServicePage), 4)]
+[assembly: MenuItem("DeviceOrientationPageTitle", typeof(AppResources), nameof(DeviceOrientationServicePage), 4)]
 namespace DevAssessment.Views
 {
     public partial class DeviceOrientationServicePage : ContentPage

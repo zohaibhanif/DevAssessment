@@ -1,8 +1,9 @@
-﻿using AdminModule.Views;
-using MenuHelper;
+﻿using AdminModule.Resources;
+using AdminModule.Views;
+using Common.Helpers;
 using Xamarin.Forms;
 
-[assembly: MenuItem("Admin Page", nameof(AdminPage), 3)]
+[assembly: MenuItem("AdminPageTitle", typeof(AppResources), nameof(AdminPage), 3)]
 namespace AdminModule.Views
 {
     public partial class AdminPage : ContentPage
