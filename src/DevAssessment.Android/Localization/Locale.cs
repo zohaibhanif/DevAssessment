@@ -17,9 +17,9 @@ namespace DevAssessment.Droid.Localization
         {
             var netLanguage = "en";
             var androidLocale = Java.Util.Locale.Default;
-            netLanguage = AndroidToDotnetLanguage(androidLocale.ToString().Replace("_", "-"));
-
+            netLanguage = androidLocale.Language;
             CultureInfo cultureInfo = null;
+
             try
             {
                 cultureInfo = new CultureInfo(netLanguage);
@@ -28,7 +28,7 @@ namespace DevAssessment.Droid.Localization
             {
                 try
                 {
-                    var fallback = ToDotnetFallbackLanguage(new PlatformCulture(netLanguage));
+                    var fallback = new PlatformCulture(netLanguage).LanguageCode;
                     cultureInfo = new CultureInfo(fallback);
                 }
                 catch (CultureNotFoundException e2)
@@ -38,43 +38,6 @@ namespace DevAssessment.Droid.Localization
             }
 
             return cultureInfo;
-        }
-
-        private string AndroidToDotnetLanguage(string androidLanguage)
-        {
-            Console.WriteLine("Android Language:" + androidLanguage);
-            var netLanguage = androidLanguage;
-
-            switch (androidLanguage)
-            {
-                case "ms-BN":   
-                case "ms-MY":   
-                case "ms-SG":   
-                    netLanguage = "ms";
-                    break;
-                case "in-ID":  
-                    netLanguage = "id-ID"; 
-                    break;
-                case "gsw-CH":  
-                    netLanguage = "de-CH"; 
-                    break;
-            }
-
-            return netLanguage;
-        }
-
-        private string ToDotnetFallbackLanguage(PlatformCulture platformCulture)
-        {
-            var netLanguage = platformCulture.LanguageCode;
-
-            switch (platformCulture.LanguageCode)
-            {
-                case "gsw":
-                    netLanguage = "de-CH"; 
-                    break;
-            }
-
-            return netLanguage;
         }
     }
 }
