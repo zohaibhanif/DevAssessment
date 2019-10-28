@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Frame xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       mc:Ignorable="d"
+       xmlns:prism="http://prismlibrary.com"
+       xmlns:resource="clr-namespace:DevAssessment.Resources"
+       prism:ViewModelLocator.AutowireViewModel="True"
+       prism:DialogLayout.RelativeWidthRequest="{OnIdiom Default=0.75, Desktop=0.5}"
+       x:Class="DevAssessment.Views.ErrorDialogView"
+       HasShadow="false"
+       BackgroundColor="White">
+
+  <StackLayout>
+    <StackLayout Margin="0,0,0,5" 
+                 HorizontalOptions="FillAndExpand">
+      <Label FontSize="Large"
+             TextColor="{StaticResource DialogTitleColor}"
+             Text="{x:Static resource:AppResources.ErrorDisplayTitle}"/>
+      <BoxView HorizontalOptions="FillAndExpand"
+               Color="{StaticResource DividerColor}"
+               HeightRequest="1"/>
+    </StackLayout>
+    <Label Text="{Binding Message}"
+           Margin="0,0,0,5" />
+    <Button Text="OK"
+                Command="{Binding CloseCommand}" />
+  </StackLayout>
+</Frame>

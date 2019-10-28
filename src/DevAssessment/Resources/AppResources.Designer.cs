@@ -248,5 +248,27 @@ namespace DevAssessment.Resources {
                 return ResourceManager.GetString("TextToSpeechPagetTitle", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Alert Display.
+        /// </summary>
+        internal static string AlertDisplayTitle
+        {
+            get
+            {
+                return ResourceManager.GetString("AlertDisplayTitle", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Error Display.
+        /// </summary>
+        internal static string ErrorDisplayTitle
+        {
+            get
+            {
+                return ResourceManager.GetString("ErrorDisplayTitle", resourceCulture);
+            }
+        }
     }
 }

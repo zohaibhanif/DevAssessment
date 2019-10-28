@@ -13,6 +13,8 @@
     <Color x:Key="ProfileImageContainerColor">#00bcd4</Color>
     <Color x:Key="MenuHeadingColor">White</Color>
     <Color x:Key="ButtonColor">#00bcd4</Color>
+    <Color x:Key="DividerColor">#BDBDBD</Color>
+    <Color x:Key="DialogTitleColor">#00BCD4</Color>
 
     <Style TargetType="{x:Type NavigationPage }">
       <Setter Property="BarBackgroundColor" 
