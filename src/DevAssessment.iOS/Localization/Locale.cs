@@ -1,6 +1,5 @@
 ﻿using Common.Localization;
 using Foundation;
-using System;
 using System.Globalization;
 using System.Threading;
 
@@ -17,14 +16,14 @@ namespace DevAssessment.iOS.Localization
         public CultureInfo GetCurrentCultureInfo()
         {
             var netLanguage = "en";
+            CultureInfo cultureInfo = null;
+
             if (NSLocale.PreferredLanguages.Length > 0)
             {
                 var pref = NSLocale.PreferredLanguages[0];
-
-                netLanguage = iOSToDotnetLanguage(pref);
+                netLanguage = pref;
             }
 
-            CultureInfo cultureInfo = null;
             try
             {
                 cultureInfo = new CultureInfo(netLanguage);
@@ -33,7 +32,7 @@ namespace DevAssessment.iOS.Localization
             {
                 try
                 {
-                    var fallback = ToDotnetFallbackLanguage(new PlatformCulture(netLanguage));
+                    var fallback = new PlatformCulture(netLanguage).LanguageCode;
                     cultureInfo = new CultureInfo(fallback);
                 }
                 catch (CultureNotFoundException e2)
@@ -43,41 +42,6 @@ namespace DevAssessment.iOS.Localization
             }
 
             return cultureInfo;
-        }
-
-        private string iOSToDotnetLanguage(string iOSLanguage)
-        {
-            var netLanguage = iOSLanguage;
-
-            switch (iOSLanguage)
-            {
-                case "ms-MY":   
-                case "ms-SG":   
-                    netLanguage = "ms"; 
-                    break;
-                case "gsw-CH":  
-                    netLanguage = "de-CH"; 
-                    break;
-            }
-
-            return netLanguage;
-        }
-
-        private string ToDotnetFallbackLanguage(PlatformCulture platformCulture)
-        {
-            var netLanguage = platformCulture.LanguageCode; 
-
-            switch (platformCulture.LanguageCode)
-            {
-                case "pt":
-                    netLanguage = "pt-PT"; 
-                    break;
-                case "gsw":
-                    netLanguage = "de-CH"; 
-                    break;
-            }
-
-            return netLanguage;
         }
     }
 }
