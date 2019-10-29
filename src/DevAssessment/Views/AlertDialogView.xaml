@@ -4,6 +4,7 @@
        xmlns:d="http://xamarin.com/schemas/2014/forms/design"
        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
        xmlns:resource="clr-namespace:DevAssessment.Resources"
+       xmlns:icon="clr-namespace:Common.Fonts;assembly=Common"
        mc:Ignorable="d"
        xmlns:prism="http://prismlibrary.com"
        prism:ViewModelLocator.AutowireViewModel="True"
@@ -15,9 +16,19 @@
   <StackLayout>
     <StackLayout Margin="0,0,0,5" 
                  HorizontalOptions="FillAndExpand">
-      <Label FontSize="Large"
-             TextColor="{StaticResource DialogTitleColor}"
-             Text="{x:Static resource:AppResources.AlertDisplayTitle}"/>
+      <StackLayout Margin="0" Orientation="Horizontal">
+        <Label FontSize="Large"
+               TextColor="{StaticResource DialogTitleColor}"
+               FontFamily="{StaticResource FontAwesomeSolid}"
+               Text="{x:Static icon:SolidIconFont.InfoCircle}"
+               VerticalOptions="End"
+               VerticalTextAlignment="Center" />
+        <Label FontSize="Large"
+               TextColor="{StaticResource DialogTitleColor}"
+               Text="{x:Static resource:AppResources.AlertDisplayTitle}"
+               VerticalOptions="Center"
+               VerticalTextAlignment="Center"/>
+      </StackLayout>
       <BoxView HorizontalOptions="FillAndExpand"
                Color="{StaticResource DividerColor}"
                HeightRequest="1"/>
