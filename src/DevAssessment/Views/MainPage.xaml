@@ -50,7 +50,24 @@
           </ListView.Behaviors>
           <ListView.ItemTemplate>
             <DataTemplate>
-              <TextCell Text="{Binding Name}" />
+              <ViewCell>
+                <Grid Padding="10">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+                  <Label FontFamily="{StaticResource FontAwesomeSolid}" 
+                         Text="{Binding Glyph}"
+                         VerticalTextAlignment="Center"
+                         VerticalOptions="Center"
+                         TextColor="{StaticResource MenuOptionTextColor}" />
+                  <Label Text="{Binding Name}"
+                         Grid.Column="1"
+                         VerticalTextAlignment="Center"
+                         VerticalOptions="Center"
+                         TextColor="{StaticResource MenuOptionTextColor}" />
+                </Grid>
+              </ViewCell>
             </DataTemplate>
           </ListView.ItemTemplate>
         </ListView>

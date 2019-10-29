@@ -7,6 +7,7 @@ using DevAssessment.Models;
 using Prism.Modularity;
 using DevAssessment.Resources;
 using Common.Helpers;
+using Common.Fonts;
 
 namespace DevAssessment.Services
 {
@@ -45,10 +46,11 @@ namespace DevAssessment.Services
                 .Select(x => new Item()
                 {
                     Name = x.DisplayName,
-                    Uri = x.NavigationName
+                    Uri = x.NavigationName,
+                    Glyph = x.Glyph
                 }).ToList();
 
-            menuItems.Add(new Item() { Name = AppResources.LabelLogout, Uri = string.Empty });
+            menuItems.Add(new Item() { Name = AppResources.LabelLogout, Uri = string.Empty, Glyph = SolidIconFont.Share });
             MenuItems = new ObservableCollection<Item>(menuItems);
         }
 
