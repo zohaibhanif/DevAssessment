@@ -6,6 +6,7 @@
        mc:Ignorable="d"
        xmlns:prism="http://prismlibrary.com"
        xmlns:resource="clr-namespace:DevAssessment.Resources"
+       xmlns:icon="clr-namespace:Common.Fonts;assembly=Common"
        prism:ViewModelLocator.AutowireViewModel="True"
        prism:DialogLayout.RelativeWidthRequest="{OnIdiom Default=0.75, Desktop=0.5}"
        x:Class="DevAssessment.Views.ErrorDialogView"
@@ -15,9 +16,19 @@
   <StackLayout>
     <StackLayout Margin="0,0,0,5" 
                  HorizontalOptions="FillAndExpand">
-      <Label FontSize="Large"
-             TextColor="{StaticResource DialogTitleColor}"
-             Text="{x:Static resource:AppResources.ErrorDisplayTitle}"/>
+      <StackLayout Margin="0" Orientation="Horizontal">
+        <Label FontSize="Large"
+               TextColor="Red"
+               FontFamily="{StaticResource FontAwesomeSolid}"
+               Text="{x:Static icon:SolidIconFont.TimesCircle}"
+               VerticalOptions="End"
+               VerticalTextAlignment="Center" />
+        <Label FontSize="Large"
+               TextColor="{StaticResource DialogTitleColor}"
+               Text="{x:Static resource:AppResources.ErrorDisplayTitle}"
+               VerticalOptions="Center"
+               VerticalTextAlignment="Center"/>
+      </StackLayout>
       <BoxView HorizontalOptions="FillAndExpand"
                Color="{StaticResource DividerColor}"
                HeightRequest="1"/>
