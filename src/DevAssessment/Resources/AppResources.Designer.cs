@@ -270,5 +270,203 @@ namespace DevAssessment.Resources {
                 return ResourceManager.GetString("ErrorDisplayTitle", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to News.
+        /// </summary>
+        internal static string NewsReaderPageTitle
+        {
+            get
+            {
+                return ResourceManager.GetString("NewsReaderPageTitle", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to News Source List.
+        /// </summary>
+        internal static string LabelNewsSourceList
+        {
+            get
+            {
+                return ResourceManager.GetString("LabelNewsSourceList", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Source List.
+        /// </summary>
+        internal static string LabelSourceList
+        {
+            get
+            {
+                return ResourceManager.GetString("LabelSourceList", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to News Category.
+        /// </summary>
+        internal static string NewsCategoryPageTitle
+        {
+            get
+            {
+                return ResourceManager.GetString("NewsCategoryPageTitle", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Loading.
+        /// </summary>
+        internal static string LoadingText
+        {
+            get
+            {
+                return ResourceManager.GetString("LoadingText", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        internal static string ButtonOK
+        {
+            get
+            {
+                return ResourceManager.GetString("ButtonOK", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to News Reader Source.
+        /// </summary>
+        internal static string NewsReaderSourcePageTitle
+        {
+            get
+            {
+                return ResourceManager.GetString("NewsReaderSourcePageTitle", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to News Reader Source.
+        /// </summary>
+        internal static string LabelDisableAllSources
+        {
+            get
+            {
+                return ResourceManager.GetString("LabelDisableAllSources", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Article.
+        /// </summary>
+        internal static string ArticlePageTitle
+        {
+            get
+            {
+                return ResourceManager.GetString("ArticlePageTitle", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Categories.
+        /// </summary>
+        internal static string LabelCategories
+        {
+            get
+            {
+                return ResourceManager.GetString("LabelCategories", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Internet Not Available.
+        /// </summary>
+        internal static string LabelInternetNotAvailable
+        {
+            get
+            {
+                return ResourceManager.GetString("LabelInternetNotAvailable", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Business.
+        /// </summary>
+        internal static string BusinessText
+        {
+            get
+            {
+                return ResourceManager.GetString("BusinessText", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Entertainment.
+        /// </summary>
+        internal static string EntertainmentText
+        {
+            get
+            {
+                return ResourceManager.GetString("EntertainmentText", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to General.
+        /// </summary>
+        internal static string GeneralText
+        {
+            get
+            {
+                return ResourceManager.GetString("GeneralText", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Health.
+        /// </summary>
+        internal static string HealthText
+        {
+            get
+            {
+                return ResourceManager.GetString("HealthText", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Science.
+        /// </summary>
+        internal static string ScienceText
+        {
+            get
+            {
+                return ResourceManager.GetString("ScienceText", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Sports.
+        /// </summary>
+        internal static string SportsText
+        {
+            get
+            {
+                return ResourceManager.GetString("SportsText", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Technology.
+        /// </summary>
+        internal static string TechnologyText
+        {
+            get
+            {
+                return ResourceManager.GetString("TechnologyText", resourceCulture);
+            }
+        }
     }
 }

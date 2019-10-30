@@ -16,6 +16,9 @@ using Xamarin.Forms;
 using Prism.Services.Dialogs;
 using DevAssessment.Views;
 using DevAssessment.ViewModels;
+using DevAssessment.Helpers;
+using Xamarin.Essentials.Interfaces;
+using Xamarin.Essentials.Implementation;
 
 namespace DevAssessment
 {
@@ -54,6 +57,13 @@ namespace DevAssessment
             containerRegistry.RegisterSingleton<IMenuService, MenuService>();
             containerRegistry.RegisterDialog<AlertDialogView, AlertDialogViewModel>();
             containerRegistry.RegisterDialog<ErrorDialogView, ErrorDialogViewModel>();
+            containerRegistry.RegisterDialog<WebViewDialogView, WebViewDialogViewModel>();
+            containerRegistry.Register<IApiOption, NewsApiOption>();
+            containerRegistry.Register<INetworkService, NetworkService>();
+            containerRegistry.Register<IApiService, ApiService>();
+            containerRegistry.Register<IRestClient, RestClient>();
+            containerRegistry.Register<INewsApiService, NewsApiService>();
+            containerRegistry.Register<IConnectivity, ConnectivityImplementation>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)

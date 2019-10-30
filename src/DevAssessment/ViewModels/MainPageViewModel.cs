@@ -19,9 +19,13 @@ namespace DevAssessment.ViewModels
     public class MainPageViewModel : BindableBase, IInitialize, IPageLifecycleAware
     {
         private IEventAggregator EventAggregator { get; }
+
         private IMenuService MenuService { get; }
+
         private INavigationService NavigationService { get; }
+
         private IModuleManager ModuleManager { get; }
+
         private ILogger Logger { get; }
 
         public MainPageViewModel(INavigationService navigationService, ILogger logger, IMenuService menuService, IEventAggregator eventAggregator, IModuleManager moduleManager)
@@ -64,23 +68,6 @@ namespace DevAssessment.ViewModels
 
         public DelegateCommand<Item> NavigationCommand { get; }
 
-        private void OnLogoutCommandExecuted()
-        {
-            EventAggregator.GetEvent<LogoutRequestEvent>().Publish();
-        }
-
-        private async void OnNavigationCommandExecuted(Item item)
-        {
-            if (item.Name.Equals(AppResources.LabelLogout))
-            {
-                LogoutCommand.Execute();
-            }
-            else
-            {
-                await NavigationService.NavigateAsync($"NavigationPage/{item.Uri}");
-            }
-        }
-
         public void OnAppearing()
         {
             if (Device.Idiom == TargetIdiom.Desktop || Device.Idiom == TargetIdiom.TV || (Device.Idiom == TargetIdiom.Tablet && DeviceDisplay.MainDisplayInfo.Orientation == DisplayOrientation.Landscape))
@@ -108,6 +95,23 @@ namespace DevAssessment.ViewModels
             {
                 var accessToken = parameters.GetValue<string>("accessToken");
                 JwtUser = new JwtUser(accessToken);
+            }
+        }
+
+        private void OnLogoutCommandExecuted()
+        {
+            EventAggregator.GetEvent<LogoutRequestEvent>().Publish();
+        }
+
+        private async void OnNavigationCommandExecuted(Item item)
+        {
+            if (item.Name.Equals(AppResources.LabelLogout))
+            {
+                LogoutCommand.Execute();
+            }
+            else
+            {
+                await NavigationService.NavigateAsync($"NavigationPage/{item.Uri}");
             }
         }
     }

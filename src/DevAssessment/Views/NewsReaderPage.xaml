@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:resource="clr-namespace:DevAssessment.Resources"
+             xmlns:local="clr-namespace:DevAssessment.Views"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="DevAssessment.Views.NewsReaderPage"
+             Title="{x:Static resource:AppResources.NewsReaderPageTitle}">
+
+  <StackLayout Margin="0"
+               Padding="0">
+    <local:ConnectivityView />
+    <StackLayout Margin="20,35,20,20">
+      <Label Style="{StaticResource Heading}"
+           Text="{x:Static resource:AppResources.LabelCategories}"/>
+      <ListView ItemsSource="{Binding CategoryList}"
+              SelectionMode="None">
+        <ListView.Behaviors>
+          <prism:EventToCommandBehavior 
+                            Command="{Binding NavigationCommand}" 
+                            EventName="ItemTapped" 
+                            EventArgsParameterPath="Item" />
+        </ListView.Behaviors>
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <Label Text="{Binding DisplayName}"
+                   FontAttributes="Bold"
+                   VerticalTextAlignment="Center" />
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
+  </StackLayout>
+</ContentPage>

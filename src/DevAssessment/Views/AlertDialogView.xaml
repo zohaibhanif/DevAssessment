@@ -35,7 +35,7 @@
     </StackLayout>
     <Label Text="{Binding Message}"
            Margin="0,0,0,5" />
-    <Button Text="OK"
+    <Button Text="{x:Static resource:AppResources.ButtonOK}"
                 Command="{Binding CloseCommand}" />
   </StackLayout>
 </Frame>

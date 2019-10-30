@@ -4,5 +4,6 @@
     {
         public const string Message = "Message";
         public const string Exception = "Exception";
+        public const string Url = "Url";
     }
 }
