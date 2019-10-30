@@ -2,6 +2,7 @@
 using Foundation;
 using System.Globalization;
 using System.Threading;
+using DevAssessment.Extensions;
 
 namespace DevAssessment.iOS.Localization
 {
@@ -26,14 +27,25 @@ namespace DevAssessment.iOS.Localization
 
             try
             {
+                if (!(this.IsLanguageSupported(netLanguage)))
+                {
+                    netLanguage = "en";
+                }
+
                 cultureInfo = new CultureInfo(netLanguage);
             }
             catch (CultureNotFoundException e1)
             {
                 try
                 {
-                    var fallback = new PlatformCulture(netLanguage).LanguageCode;
-                    cultureInfo = new CultureInfo(fallback);
+                    var fallbackLanguage = new PlatformCulture(netLanguage).LanguageCode;
+
+                    if (!(this.IsLanguageSupported(fallbackLanguage)))
+                    {
+                        fallbackLanguage = "en";
+                    }
+
+                    cultureInfo = new CultureInfo(fallbackLanguage);
                 }
                 catch (CultureNotFoundException e2)
                 {

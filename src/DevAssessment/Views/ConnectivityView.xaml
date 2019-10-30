@@ -10,7 +10,9 @@
        BackgroundColor="Red"
        CornerRadius="0"
        HeightRequest="75"
-       Padding="5">
+       Padding="5"
+       Visual="Material">
+  
   <Label Text="{x:Static resource:AppResources.LabelInternetNotAvailable}"
          TextColor="White"
          VerticalTextAlignment="Center"/>

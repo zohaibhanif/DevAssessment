@@ -9,8 +9,8 @@
         VerticalOptions="FillAndExpand">
     <StackLayout  HorizontalOptions="FillAndExpand" 
                   VerticalOptions="CenterAndExpand" 
-                  Margin="5">
-      <Label Text="Login"
+                  Margin="20">
+      <Label Text="{x:Static resource:AppResources.LabelLogin}"
              Style="{StaticResource Heading}"
              HorizontalOptions="Center"/>
       <Entry Text="{Binding Email}" 
