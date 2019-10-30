@@ -126,8 +126,17 @@
   <data name="ApplicationTitle" xml:space="preserve">
     <value>Dev Assessment</value>
   </data>
+  <data name="ArticlePageTitle" xml:space="preserve">
+    <value>Articles</value>
+  </data>
+  <data name="BusinessText" xml:space="preserve">
+    <value>Business</value>
+  </data>
   <data name="ButtonGetDeviceOrientation" xml:space="preserve">
     <value>Get Device Orientation</value>
+  </data>
+  <data name="ButtonOK" xml:space="preserve">
+    <value>Okay</value>
   </data>
   <data name="ButtonPickPhoto" xml:space="preserve">
     <value>Pick Photo</value>
@@ -141,14 +150,32 @@
   <data name="DeviceOrientationPageTitle" xml:space="preserve">
     <value>Device Orientation</value>
   </data>
+  <data name="EntertainmentText" xml:space="preserve">
+    <value>Entertainment</value>
+  </data>
   <data name="ErrorDisplayTitle" xml:space="preserve">
     <value>Error</value>
+  </data>
+  <data name="GeneralText" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="HealthText" xml:space="preserve">
+    <value>Health</value>
+  </data>
+  <data name="LabelCategories" xml:space="preserve">
+    <value>Categories</value>
   </data>
   <data name="LabelDeviceOrientation" xml:space="preserve">
     <value>Device Orientation</value>
   </data>
+  <data name="LabelDisableAllSources" xml:space="preserve">
+    <value>Disable All Sources</value>
+  </data>
   <data name="LabelEmail" xml:space="preserve">
     <value>Email</value>
+  </data>
+  <data name="LabelInternetNotAvailable" xml:space="preserve">
+    <value>It seems that internet is not available!</value>
   </data>
   <data name="LabelLandscape" xml:space="preserve">
     <value>Landscape</value>
@@ -157,7 +184,10 @@
     <value>Logout</value>
   </data>
   <data name="LabelName" xml:space="preserve">
-    <value>Name:</value>
+    <value>Name</value>
+  </data>
+  <data name="LabelNewsSourceList" xml:space="preserve">
+    <value>News Source List</value>
   </data>
   <data name="LabelPhotoPicker" xml:space="preserve">
     <value>Photo Picker</value>
@@ -166,7 +196,10 @@
     <value>Portrait</value>
   </data>
   <data name="LabelRole" xml:space="preserve">
-    <value>Role:</value>
+    <value>Role</value>
+  </data>
+  <data name="LabelSourceList" xml:space="preserve">
+    <value>Source List</value>
   </data>
   <data name="LabelTextToSpeech" xml:space="preserve">
     <value>Text to Speech</value>
@@ -174,14 +207,32 @@
   <data name="LabelUndefined" xml:space="preserve">
     <value>Undefined</value>
   </data>
+  <data name="LoadingText" xml:space="preserve">
+    <value>Loading</value>
+  </data>
   <data name="MainPageTitle" xml:space="preserve">
     <value>Main</value>
   </data>
   <data name="MenuTitle" xml:space="preserve">
     <value>Menu</value>
   </data>
+  <data name="NewsReaderPageTitle" xml:space="preserve">
+    <value>News Reader</value>
+  </data>
+  <data name="NewsReaderSourcePageTitle" xml:space="preserve">
+    <value>News Reader Source</value>
+  </data>
   <data name="PhotoPickerPageTitle" xml:space="preserve">
     <value>Photo Picker</value>
+  </data>
+  <data name="ScienceText" xml:space="preserve">
+    <value>Science</value>
+  </data>
+  <data name="SportsText" xml:space="preserve">
+    <value>Sports</value>
+  </data>
+  <data name="TechnologyText" xml:space="preserve">
+    <value>Technology</value>
   </data>
   <data name="TextToSpeechPagetTitle" xml:space="preserve">
     <value>Text To Speech</value>

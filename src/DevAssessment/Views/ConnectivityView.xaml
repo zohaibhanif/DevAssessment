@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Frame xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       xmlns:resource="clr-namespace:DevAssessment.Resources"
+       mc:Ignorable="d"
+       x:Class="DevAssessment.Views.ConnectivityView"
+       IsVisible="{Binding IsNotConnected}" 
+       BackgroundColor="Red"
+       CornerRadius="0"
+       HeightRequest="75"
+       Padding="5">
+  <Label Text="{x:Static resource:AppResources.LabelInternetNotAvailable}"
+         TextColor="White"
+         VerticalTextAlignment="Center"/>
+</Frame>

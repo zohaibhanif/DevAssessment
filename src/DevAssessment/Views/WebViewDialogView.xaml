@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:icon="clr-namespace:Common.Fonts;assembly=Common"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             prism:DialogLayout.RelativeWidthRequest="{OnIdiom Default=0.95, Desktop=0.5}"
+             mc:Ignorable="d"
+             x:Class="DevAssessment.Views.WebViewDialogView">
+
+  <StackLayout HorizontalOptions="FillAndExpand" 
+               VerticalOptions="FillAndExpand"
+               BackgroundColor="White">
+    <StackLayout BackgroundColor="{StaticResource NavBarColor}"
+                 Margin="0"
+                 Padding="0">
+      <Label FontFamily="{StaticResource FontAwesomeSolid}"
+           Text="{x:Static icon:SolidIconFont.Times}" 
+           HorizontalOptions="EndAndExpand"
+           TextColor="White"
+           Padding="10">
+        <Label.GestureRecognizers>
+          <TapGestureRecognizer Command="{Binding CloseCommand}"/>
+        </Label.GestureRecognizers>
+      </Label>
+    </StackLayout>
+    <WebView x:Name="NewsWebView" Source="{Binding Url}"
+             Margin="0"
+             WidthRequest="450" 
+             HeightRequest="450" 
+             Navigating="NewsWebView_Navigating"
+             Navigated="NewsWebView_Navigated"/>
+  </StackLayout>
+</ContentView>

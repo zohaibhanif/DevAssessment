@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:resource="clr-namespace:DevAssessment.Resources"
+             xmlns:local="clr-namespace:DevAssessment.Views"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="DevAssessment.Views.ArticleListPage"
+             Title="{x:Static resource:AppResources.ArticlePageTitle}">
+  
+  <StackLayout Margin="0"
+               Padding="0">
+    <local:ConnectivityView />
+    <Grid HorizontalOptions="FillAndExpand" 
+        VerticalOptions="FillAndExpand">
+      <StackLayout Margin="20,35,20,20">
+        <ListView ItemsSource="{Binding ArticleList}"
+              SelectionMode="None">
+          <ListView.Behaviors>
+            <prism:EventToCommandBehavior 
+                            Command="{Binding SelectArticleCommand}" 
+                            EventName="ItemTapped" 
+                            EventArgsParameterPath="Item" />
+          </ListView.Behaviors>
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell>
+                <Grid RowSpacing="0" 
+                      Padding="5">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                  </Grid.ColumnDefinitions>
+                  <Image HeightRequest="100">
+                    <Image.Source>
+                      <UriImageSource Uri="{Binding UrlToImage}" 
+			                                CacheValidity="7" 
+			                                CachingEnabled="true"/>
+                    </Image.Source>
+                  </Image>
+                  <Label Text="{Binding Title}"
+                         Grid.Column="1"
+                         Margin="5,0,0,0"
+                         FontAttributes="Bold"
+                         LineBreakMode="TailTruncation" />
+                </Grid>
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+      </StackLayout>
+      <BoxView BackgroundColor="Black"
+             Opacity="0.6"
+             VerticalOptions="FillAndExpand"
+             HorizontalOptions="FillAndExpand"
+             IsVisible="{Binding IsBusy}" />
+      <StackLayout IsVisible="{Binding IsBusy}"
+                 Padding="12"
+                 BackgroundColor="Transparent"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="CenterAndExpand">
+        <ActivityIndicator IsRunning="{Binding IsBusy}" 
+                         Color ="White"/>
+        <Label Text="{x:Static resource:AppResources.LoadingText}"
+             HorizontalOptions="Center"
+             TextColor="White"
+             FontSize="Large"
+             Margin="20,10"/>
+      </StackLayout>
+    </Grid>
+  </StackLayout>
+</ContentPage>
