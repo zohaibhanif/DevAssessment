@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:DevAssessment.Views"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="DevAssessment.Views.NewsReaderSourcePage"
-             Title="{x:Static resource:AppResources.NewsReaderSourcePageTitle}">
+             Title="{x:Static resource:AppResources.NewsReaderSourcePageTitle}"
+             Visual="Material">
   <StackLayout Margin="0"
                Padding="0">
     <local:ConnectivityView />

@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:DevAssessment.Views"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="DevAssessment.Views.ArticleListPage"
-             Title="{x:Static resource:AppResources.ArticlePageTitle}">
+             Title="{x:Static resource:AppResources.ArticlePageTitle}"
+             Visual="Material">
   
   <StackLayout Margin="0"
                Padding="0">
